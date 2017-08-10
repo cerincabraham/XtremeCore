@@ -84,7 +84,7 @@
 				percentageComplete = currentslice/totalslices
 				circle.animate(percentageComplete);
 				printPercentage = percentageComplete;
-				document.getElementById("printPercentage").innerHTML=printText;
+				document.getElementById("printPercentage").innerHTML=printPercentage + "%";
 				document.getElementById("jobName").innerHTML=runningjobName;
 				if(ranOnce == false){
 					elapsedTime = data.elapsedTime / 1000;
