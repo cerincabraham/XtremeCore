@@ -100,6 +100,16 @@ img {
 	
 }
 
+
+.printPercentage {
+	position: absolute;
+	top:200;
+	left:450; 
+	color:white;
+	font-size: 35;
+	
+}
+
 .play {
 	position: absolute;
 	top:270;
