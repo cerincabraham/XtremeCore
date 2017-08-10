@@ -83,6 +83,8 @@
 	       		runningjobName = (data.jobName);
 				percentageComplete = currentslice/totalslices
 				circle.animate(percentageComplete);
+				printPercentage = percentageComplete;
+				document.getElementById("printPercentage").innerHTML=printText;
 				document.getElementById("jobName").innerHTML=runningjobName;
 				if(ranOnce == false){
 					elapsedTime = data.elapsedTime / 1000;
@@ -233,6 +235,7 @@
 				<img name="stopGrey" class="stop stopGrey" src="images/stopGrey.png">
 				
 				<div class="printText" id="printText"> </div>
+		   		<div class="printPercentage" id="printPercentage"> </div>
 				<div class="jobName" id="jobName"> </div>
 				
 				<div class="timePrintJob" id="timePrintJob"> </div>
