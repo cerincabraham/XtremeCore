@@ -30,10 +30,14 @@ function startpage(){
         else{
                 wifiupdate();
         }
+               
+        
+              
         
         setInterval(function() {
                 //wifi updating
-                wifiupdate();    
+                wifiupdate();  
+		printerStatus();
 	}, 3000);
 }
 

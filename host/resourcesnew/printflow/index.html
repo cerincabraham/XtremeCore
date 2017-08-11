@@ -37,6 +37,7 @@
     var timeToComplete = "";
     var timeToCompleteFormatted = "";
 	var ranOnce = false;
+	var currentPercentage  = "";
     
     function secondsToNiceFormat(totalSeconds) {
     	hours = Math.floor(totalSeconds / 3600);
@@ -81,10 +82,11 @@
 				totalslices=parseInt(data.totalSlices);
 	        	jobId = (data.id);
 	       		runningjobName = (data.jobName);
-				percentageComplete = currentslice/totalslices
-				circle.animate(percentageComplete);
-				printPercentage = percentageComplete;
-				document.getElementById("printPercentage").innerHTML=printPercentage + "%";
+				percentageComplete = currentslice/totalslices    
+    			currentPercentage = percentageComplete * 100; 
+	            currentPercentage = currentPercentage.toFixed(1);  
+	            document.getElementById("printPercentage").innerHTML=currentPercentage  + "%";
+				circle.animate(percentageComplete / 100);	
 				document.getElementById("jobName").innerHTML=runningjobName;
 				if(ranOnce == false){
 					elapsedTime = data.elapsedTime / 1000;
@@ -223,6 +225,8 @@
 				</a>
 				
 				<img name="wifi" id="wifi" class="wifi" src="images/pixel.png">
+
+<img name="printerstatus" id="printerstatus" class="printerstatus" src="images/pixel.png">
 
 				<div class="progress-circel" id="progress-circel"></div>
 				
