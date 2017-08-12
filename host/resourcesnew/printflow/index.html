@@ -82,11 +82,13 @@
 				totalslices=parseInt(data.totalSlices);
 	        	jobId = (data.id);
 	       		runningjobName = (data.jobName);
-				percentageComplete = currentslice/totalslices    
+				percentageComplete = currentslice / totalslice;  
+				percentageComplete = 48 / 103;
     			currentPercentage = percentageComplete * 100; 
-	            currentPercentage = currentPercentage.toFixed(1);  
+	            currentPercentage = currentPercentage.toFixed(2);  
 	            document.getElementById("printPercentage").innerHTML=currentPercentage  + "%";
-				circle.animate(percentageComplete / 100);	
+	            percentageComplete = percentageComplete.toFixed(3);
+				circle.animate(percentageComplete);	
 				document.getElementById("jobName").innerHTML=runningjobName;
 				if(ranOnce == false){
 					elapsedTime = data.elapsedTime / 1000;
