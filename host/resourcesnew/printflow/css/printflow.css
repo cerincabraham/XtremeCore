@@ -29,14 +29,14 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
-  cursor: none;
+  cursor: help;
 }
 
 .layersText {
 	position: absolute;
 	color:white;
 	top:360;
-	left:608; 
+	left:660; 
 	z-index: 10;
 	font-size : 12px;
 }
@@ -45,7 +45,7 @@ img {
 	position: absolute;
 	color:white;
 	top:340;
-	left:597; 
+	left:649; 
 	z-index: 10;
 }
 
@@ -61,7 +61,7 @@ img {
 	position: absolute;
 	color:white;
 	top:340;
-	left:600; 
+	left:652; 
 	z-index: 10;
 }
 
@@ -79,6 +79,43 @@ img {
 	left:350; 
 	z-index: 10;
 }
+.nextBtn{
+  	position: absolute;
+	top:247;
+	left:703; 
+	z-index: 10;
+}
+
+
+.levelBar{
+	-webkit-user-drag: none;
+  	-khtml-user-drag: none;
+  	-moz-user-drag: none;
+  	-o-user-drag: none;
+  	user-drag: none;
+  	position: absolute;
+	top:60;
+	left:121; 
+	z-index: 10;	
+}
+
+.levelImage{
+	-webkit-user-drag: none;
+  	-khtml-user-drag: none;
+  	-moz-user-drag: none;
+  	-o-user-drag: none;
+  	user-drag: none;
+  	position: absolute;
+	top:180;
+	left:112; 
+	z-index: 10;
+}
+.levelHomeBtn{
+	position: absolute;
+	top:250;
+	left:140; 
+	z-index: 10;
+}
 
 .jobName {
 	position: absolute;
@@ -90,47 +127,49 @@ img {
 
 .printText {
 	position: absolute;
-	top:220;
+	top:295;
 	left:423; 
 	color:white;
 	font-size: 25;
+	text-align: center;
 	
 }
 
 .printPercentage {
 	position: absolute;
-	top:169;
-	left:465; 
+	top:175;
+	left:455; 
 	color:white;
-	font-size: 35;
-	
+	font-size: 55;
+	text-align: center;
 }
+
 
 .play {
 	position: absolute;
-	top:270;
+	top:258;
 	left:425; 
 	z-index: 10;
 }
 
 .pause {
 	position: absolute;
-	top:270;
+	top:258;
 	left:470; 
 	z-index: 10	
 }
 
 .stop {
 	position: absolute;
-	top:270;
+	top:258;
 	left:515; 
 	z-index: 10	
 }
             .progress-circel {
             	position: absolute;
 				top:140;
-				left:374; 
- 	 			width: 225px;
+				left:375; 
+				width: 225px;
  				height: 225px;
  				z-index: 5;
 				
@@ -145,6 +184,8 @@ img {
 	position: absolute;
 	top:140;
 	left:375; 
+	width: 225px;
+ 	height: 225px;
 }
 
 .disable {
@@ -231,7 +272,18 @@ img {
 	left: 45px;
 }
 
-
+.initScreen{
+	width: 800px;
+	height: 480px;
+	background-image: url("../images/initBackground.png");
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	cursor: none;	
+}
 .screen{
 	width: 800px;
 	height: 480px;

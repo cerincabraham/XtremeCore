@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="../jquery/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Latest v1 Angular -->
+        <script src="../angular/js/angular.min.js"></script>
+
+        <script src="js/moment.min.js"></script>
+		
+	<script src="js/printflow.js"></script>
+	
+	<script src="js/js.cookie.js"></script>
+
+	<script src="js/progressbar.min.js"></script>
+		
+	<link href="css/printflow.css" rel="stylesheet">
+	<style>
+
+        </style>
+
+	<script>
+        var clickCount = 1;
+        
+        function nextEvent()
+        {
+             document.getElementById("printPercentage").innerHTML=clickCount ;
+           if( clickCount == 1)
+            {
+        	    document.getElementById("levelImage").src="images/levelImage_3_b.png";
+        	}
+        	if( clickCount == 2)
+            {
+        	    document.getElementById("levelImage").src="images/levelImage_3_c.png";
+        	    $('.levelHomeBtn').show();
+        	}
+        	if( clickCount == 3 )
+            {
+        	    document.getElementById("levelImage").src="images/levelImage_3_d.png";
+        	     $('.levelHomeBtn').hide();
+        	} 
+        	if( clickCount == 4 ) {
+        	    window.location.href="Home.html";
+        	}
+        	  clickCount = clickCount + 1; 
+        }
+        
+        function levelHome()
+        {
+			$.getJSON('../services/printers/homeZ/'+printerName);
+			console.log("I'm gonna home");
+			
+		}
+        	
+        function init()
+        {
+             document.getElementById("levelImage").src="images/levelImage_3_a.png";
+             $('.levelHomeBtn').hide();
+             
+             	// just grabbing the first printer available, since it's embedded this should be fine :)! Only downside printer would need to be started!
+			$.getJSON('/services/printers/getFirstAvailablePrinter').success(function(data) {
+	   	        configurationObject = data["configuration"];
+	   	    	printerName = configurationObject["name"];
+		     });
+		     
+        }
+        
+        	$(document).ready(function(){
+		        $(".levelHomeBtn").mouseup(function(){
+		    	    $('#levelHomeBtn').attr('src','images/levelHome_btn.png');
+		        });
+		        $(".levelHomeBtn").mousedown(function(){
+		    	    $('#levelHomeBtn').attr('src','images/levelHome_btn.png');
+		        });
+        	});
+        
+        
+	</script>
+
+
+
+
+    </head>
+    <body style="background-color: black;" onload="init();" >
+        <div class="initScreen">
+            <div class="main">
+			
+				
+				<a href="Home.html">
+				</a>
+				<img name="levelImage" id="levelImage" class="levelImage" >
+			    <img class="levelBar" src="images/levelBar_3.png">
+                <img name="nextBtn" class="nextBtn" id="nextBtn" src="images/nextBtn.png" onclick="nextEvent();">
+                <img name="levelHomeBtn" class="levelHomeBtn" src="images/levelHome_btn.png" onclick="levelHome();">
+				<div class="printPercentage" id="printPercentage"> </div>
+            </div>
+        </div>
+
+	
+    </body>
+</html>

@@ -30,13 +30,18 @@
         function nextEvent()
         {
              document.getElementById("printPercentage").innerHTML=clickCount ;
-        	 window.location.href="level_2.html";
-        	
+           if( clickCount == 1)
+            {
+        	    document.getElementById("levelImage").src="images/levelImage_2_b.png";
+        	}else {
+        	    window.location.href="level_3.html";
+        	}
+        	  clickCount = clickCount + 1; 
         }
         	
         function init()
         {
-             document.getElementById("levelImage").src="images/levelImage_1_a.png";
+             document.getElementById("levelImage").src="images/levelImage_2_a.png";
         }	
 	</script>
 
@@ -52,7 +57,7 @@
 				<a href="Home.html">
 				</a>
 				<img name="levelImage" id="levelImage" class="levelImage" >
-			    <img class="levelBar" src="images/levelBar_1.png">
+			    <img class="levelBar" src="images/levelBar_2.png">
                 <img name="nextBtn" class="nextBtn" id="nextBtn" src="images/nextBtn.png" onclick="nextEvent()">
 				<div class="printPercentage" id="printPercentage"> </div>
             </div>

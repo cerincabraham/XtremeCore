@@ -55,7 +55,7 @@
 				else{
 					$.getJSON("../services/printers/startJob/"+$("#printables").val()+"/"+printerName)
 					.done(function(){
-						window.location.href="index.html";
+						window.location.href="Home.html";
 					})
 					.fail(function(response){
 						console.log(response);
@@ -142,7 +142,7 @@
 					<img class="wifiButton" src="images/wifi_white.png">
 				</a>
 				
-				<a href="index.html">
+				<a href="Home.html">
 					<img class="homeButton" src="images/home_blue.png">
 				</a>
 				

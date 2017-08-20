@@ -37,7 +37,7 @@ function startpage(){
         setInterval(function() {
                 //wifi updating
                 wifiupdate();  
-		printerStatus();
+		//printerStatus();
 	}, 3000);
 }
 
