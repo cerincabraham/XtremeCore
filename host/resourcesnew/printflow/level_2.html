@@ -42,6 +42,9 @@
         function init()
         {
              document.getElementById("levelImage").src="images/levelImage_2_a.png";
+             document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+             document.getElementById("printerProcessCautionText1").innerHTML="Do not forget to lock the print plate";
+             document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";
         }	
 	</script>
 
@@ -53,11 +56,16 @@
         <div class="initScreen">
             <div class="main">
 			
-				
-				<a href="Home.html">
-				</a>
+			 <img class="levelBar" src="images/levelBar_2.png">	
+			 <div class="printerProcessTextDiv">
+                    	<div class="printerProcessText" id="printerProcessText"> </div>
+                    	<div class="printerProcessCautionText1" id="printerProcessCautionText1"> </div>
+                    	<div class="printerProcessCautionText2" id="printerProcessCautionText2"> </div>
+                        <img name="printerProcessCautionIcon1" id="printerProcessCautionIcon1" class="printerProcessCautionIcon1"  src="images/Block_Icon.png">
+                        <img name="printerProcessCautionIcon2" id="printerProcessCautionIcon2" class="printerProcessCautionIcon2"  src="images/Block_Icon.png">
+                </div>
+               
 				<img name="levelImage" id="levelImage" class="levelImage" >
-			    <img class="levelBar" src="images/levelBar_2.png">
                 <img name="nextBtn" class="nextBtn" id="nextBtn" src="images/nextBtn.png" onclick="nextEvent()">
 				<div class="printPercentage" id="printPercentage"> </div>
             </div>

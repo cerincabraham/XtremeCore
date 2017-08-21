@@ -44,7 +44,17 @@
         	    document.getElementById("levelImage").src="images/levelImage_3_d.png";
         	     $('.levelHomeBtn').hide();
         	} 
-        	if( clickCount == 4 ) {
+        	if( clickCount == 4 )
+            {
+                document.getElementById("levelBar").src="images/levelBar_4.png";
+                document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+                 document.getElementById("printerProcessCautionText1").innerHTML="";
+                document.getElementById("printerProcessCautionText2").innerHTML="";
+                document.getElementById("printerProcessCautionIcon1").src="";
+        	    document.getElementById("printerProcessCautionIcon2").src="";
+        	    document.getElementById("levelImage").src="";
+        	} 
+        	if( clickCount == 5 ) {
         	    window.location.href="Home.html";
         	}
         	  clickCount = clickCount + 1; 
@@ -59,7 +69,12 @@
         	
         function init()
         {
+           // clickCount = 1; 
              document.getElementById("levelImage").src="images/levelImage_3_a.png";
+             document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+             document.getElementById("printerProcessCautionText1").innerHTML="Do not forget to lock the print plate";
+             document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";
+             
              $('.levelHomeBtn').hide();
              
              	// just grabbing the first printer available, since it's embedded this should be fine :)! Only downside printer would need to be started!
@@ -90,11 +105,16 @@
         <div class="initScreen">
             <div class="main">
 			
-				
-				<a href="Home.html">
-				</a>
+			<img name="levelBar" class="levelBar" id="levelBar" src="images/levelBar_3.png">
+			 <div class="printerProcessTextDiv">
+                    	<div class="printerProcessText" id="printerProcessText"> </div>
+                    	<div class="printerProcessCautionText1" id="printerProcessCautionText1"> </div>
+                    	<div class="printerProcessCautionText2" id="printerProcessCautionText2"> </div>
+                        <img name="printerProcessCautionIcon1" id="printerProcessCautionIcon1" class="printerProcessCautionIcon1"  src="images/Block_Icon.png">
+                        <img name="printerProcessCautionIcon2" id="printerProcessCautionIcon2" class="printerProcessCautionIcon2"  src="images/Block_Icon.png">
+                </div>
+                
 				<img name="levelImage" id="levelImage" class="levelImage" >
-			    <img class="levelBar" src="images/levelBar_3.png">
                 <img name="nextBtn" class="nextBtn" id="nextBtn" src="images/nextBtn.png" onclick="nextEvent();">
                 <img name="levelHomeBtn" class="levelHomeBtn" src="images/levelHome_btn.png" onclick="levelHome();">
 				<div class="printPercentage" id="printPercentage"> </div>

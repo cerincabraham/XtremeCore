@@ -70,6 +70,7 @@
 				$('.stopGrey').show();
 				printText = "Start a print";
 				document.getElementById("printText").innerHTML=printText;
+					
 			} else {
 				averageSlicingTime = data.averageSliceTime;
 				currentSlice = data.currentSlice;
@@ -82,12 +83,15 @@
 				totalslices=parseInt(data.totalSlices);
 	        	jobId = (data.id);
 	       		runningjobName = (data.jobName);
+	       		
 				percentageComplete = currentslice/totalslices;
     			currentPercentage = percentageComplete * 100; 
 	            currentPercentage = currentPercentage.toFixed(0);  
 	            document.getElementById("printPercentage").innerHTML=currentPercentage  + "%";
+	            
 	            percentageComplete = percentageComplete.toFixed(3);
 			    circle.animate(percentageComplete);		
+			    
 				document.getElementById("jobName").innerHTML=runningjobName;
 				if(ranOnce == false){
 					elapsedTime = data.elapsedTime / 1000;
@@ -140,7 +144,7 @@
 		startpage();
 		// test the circle
 	
-		 currentPercentage = 0.050154512;
+		 currentPercentage = 0.150154512;
 		 circle.animate(currentPercentage);	
 		 currentPercentage = currentPercentage * 100;
 		 currentPercentage = currentPercentage.toFixed(0);
@@ -245,13 +249,17 @@
 				<img name="stopWhite" class="stop stopWhite" src="images/stopWhite.png" onclick="cancel()">
 				<img name="stopGrey" class="stop stopGrey" src="images/stopGrey.png">
 				
-				<div class="printText" id="printText"> </div>
-		   		<div class="printPercentage" id="printPercentage"> </div>
+				
+				<div class="PercentageText" >
+					<div class="printText" id="printText"> </div>
+					<div class="printPercentage" id="printPercentage"> </div>
+				</div>
+		   	
 				<div class="jobName" id="jobName"> </div>
-				
-				<div class="timePrintJob" id="timePrintJob"> </div>
-				<div class="layers" id="layers"> </div>
-				
+				<div class="infoDiv">
+					<div class="timePrintJob" id="timePrintJob"> </div>
+					<div class="layers" id="layers"> </div>	
+				</div>
 				<img name="infoTime" class="infoTime" src="images/infoTime.png">
 				<img name="infoLayers" class="infoLayers" src="images/infoLayers.png">
 				

@@ -8,14 +8,7 @@ html, body {
 	font-family:MyriadPro-Regular;
 }
 
-.timeText {
-	position: absolute;
-	color:white;
-	top:360;
-	left:275; 
-	z-index: 10;
-	font-size : 12px;
-}
+
 a {
 	-webkit-user-drag: none;
   	-khtml-user-drag: none;
@@ -30,6 +23,14 @@ img {
   -o-user-drag: none;
   user-drag: none;
   cursor: help;
+}
+.timeText {
+	position: absolute;
+	color:white;
+	top:360;
+	left:275; 
+	z-index: 10;
+	font-size : 12px;
 }
 
 .layersText {
@@ -56,21 +57,26 @@ img {
 	left:245; 
 	z-index: 10;
 }
-
+.infoDiv{
+	position: relative;
+	top: 151px;
+	left: 275px;
+	width: 418px;
+	height: 50px;
+	z-index: 2;
+}
 .Layers {
 	position: absolute;
 	color:white;
-	top:340;
-	left:652; 
-	z-index: 10;
+	text-align: right;
+	width: 100%;
 }
 
 .timePrintJob {
 	position: absolute;
 	color:white;
-	top:340;
-	left:275; 
-	z-index: 10;
+	text-align: left;
+	width: 100%;
 }
 
 .closeButton {
@@ -79,10 +85,63 @@ img {
 	left:350; 
 	z-index: 10;
 }
+
+.printerProcessTextDiv{
+    position: relative;
+    top: 145px;
+    left: 112px;
+    width: 179px;
+    height: 300px;
+    z-index: 2;
+}
+
+.printerProcessText{
+	position: absolute;
+	top: 1px;
+	color: white;
+	font-size: 18px;
+	text-align: left;
+	width: 100%;
+	line-height: 127%;
+	
+}
+
+.printerProcessCautionText1{
+	position: absolute;
+    top: 99px;
+    left: 17px;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+	
+}
+.printerProcessCautionText2{
+    position: absolute;
+    top: 121px;
+    left: 17px;
+    color: white;
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+	
+}
+.printerProcessCautionIcon1{
+    position: absolute;
+    top: 96px;
+    left: -6px;
+}
+
+.printerProcessCautionIcon2{
+    position: absolute;
+    top: 120px;
+    left: -6px;
+}
+
 .nextBtn{
   	position: absolute;
-	top:247;
-	left:703; 
+	top:247px;
+	left:703px; 
 	z-index: 10;
 }
 
@@ -94,8 +153,8 @@ img {
   	-o-user-drag: none;
   	user-drag: none;
   	position: absolute;
-	top:60;
-	left:121; 
+	top:60px;
+	left:121px; 
 	z-index: 10;	
 }
 
@@ -106,69 +165,76 @@ img {
   	-o-user-drag: none;
   	user-drag: none;
   	position: absolute;
-	top:180;
-	left:112; 
-	z-index: 10;
+	top:190px;
+	left:281px; 
+	z-index: 5;
 }
 .levelHomeBtn{
 	position: absolute;
-	top:250;
-	left:140; 
+    top: 238px;
+    left: 138px; 
 	z-index: 10;
 }
 
 .jobName {
 	position: absolute;
-	top:50;
-	left:200; 
+	top:50px;
+	left:200px; 
 	color:#1CD785;
 	font-size: 20;
 }
 
 .printText {
 	position: absolute;
-	top:295;
-	left:423; 
-	color:white;
-	font-size: 25;
+	top: 124px;
+	color: white;
+	font-size: 20px;
 	text-align: center;
-	
+	width: 100%;
+}
+.PercentageText{
+	position: relative;
+	top: 127px;
+	left: 426px;
+	width: 120px;
+	height: 150px;
+	z-index: 2;
 }
 
 .printPercentage {
 	position: absolute;
-	top:175;
-	left:455; 
-	color:white;
-	font-size: 55;
+	top: 1px;
+	width: 100%;
+	color: white;
+	font-size: 65px;
 	text-align: center;
 }
 
 
 .play {
 	position: absolute;
-	top:258;
-	left:425; 
+	top:258px;
+	left:425px; 
 	z-index: 10;
 }
 
 .pause {
 	position: absolute;
-	top:258;
-	left:470; 
+	top:258px;
+	left:470px; 
 	z-index: 10	
 }
 
 .stop {
 	position: absolute;
-	top:258;
-	left:515; 
+	top:258px;
+	left:515px; 
 	z-index: 10	
 }
             .progress-circel {
             	position: absolute;
-				top:140;
-				left:375; 
+				top:140px;
+				left:375px; 
 				width: 225px;
  				height: 225px;
  				z-index: 5;
@@ -182,8 +248,8 @@ img {
 
 .progressBarBackground {
 	position: absolute;
-	top:140;
-	left:375; 
+	top:140px;
+	left:375px; 
 	width: 225px;
  	height: 225px;
 }
@@ -288,13 +354,13 @@ img {
 	width: 800px;
 	height: 480px;
 	background-image: url("../images/emptybackground.png");
-	user-drag: none; 
+	/*user-drag: none; 
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-drag: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
-	cursor: none;
+	cursor: none;*/
 }
 .main{
         height: 480px;
