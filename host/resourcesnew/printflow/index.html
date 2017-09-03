@@ -29,18 +29,109 @@
         
         function nextEvent()
         {
-             document.getElementById("printPercentage").innerHTML=clickCount ;
-        	 window.location.href="level_2.html";
-        	
+           // document.getElementById("printPercentage").innerHTML=clickCount ;
+           if( clickCount == 1)
+            {
+                document.getElementById("levelBar").src="images/levelBar_2.png";
+                document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+                document.getElementById("printerProcessCautionText1").innerHTML="Do not forget to lock the print plate";
+                document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";
+                document.getElementById("levelImage").src="images/levelImage_2_a.png";
+               
+        	}
+            if( clickCount == 2)
+            {   
+                document.getElementById("levelImage").src="images/levelImage_2_b.png";
+        	    
+        	}
+        	if( clickCount == 3 )
+            {
+                document.getElementById("levelBar").src="images/levelBar_3.png";
+                document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+                document.getElementById("printerProcessCautionText1").innerHTML="Do not forget to lock the print plate";
+                document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";
+                document.getElementById("levelImage").src="images/levelImage_3_a.png";
+        	} 
+        	if( clickCount == 4 )
+            {
+                document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+                document.getElementById("printerProcessCautionText1").innerHTML="Do not forget to lock the print plate";
+                document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";
+                document.getElementById("levelImage").src="images/levelImage_3_b.png";
+        	} 
+        	if(clickCount == 5)
+        	{
+        	    document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+                document.getElementById("printerProcessCautionText1").innerHTML="Do not forget to lock the print plate";
+                document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";
+        	    document.getElementById("levelImage").src="images/levelImage_3_c.png";
+        	    $('.levelHomeBtn').show();
+        	}
+        	if(clickCount == 6)
+        	{
+                document.getElementById("printerProcessText").innerHTML="Place the print plate on the Z-axise plate lock";
+                document.getElementById("printerProcessCautionText1").innerHTML="Do not forget to lock the print plate";
+                document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";	
+            	document.getElementById("levelImage").src="images/levelImage_3_d.png";
+        	    $('.levelHomeBtn').hide();
+        	}
+        	if( clickCount == 7 )
+            {
+                document.getElementById("levelBar").src="images/levelBar_4.png";
+                document.getElementById("printerProcessText").innerHTML="";
+                document.getElementById("printerProcessCautionText1").innerHTML="";
+                document.getElementById("printerProcessCautionText2").innerHTML="";
+                document.getElementById("printerProcessCautionIcon1").src=""; 
+                document.getElementById("printerProcessCautionIcon2").src=""; 
+                document.getElementById("levelImage").src="";
+                document.getElementById("levelImage2").src="images/levelImage_4_a.png"; 
+                $('.nextBtn').hide();
+                $('.finishBtn').show();
+        	} 
+        	  clickCount = clickCount + 1; 
         }
+        
+        function levelHome()
+        {
+			$.getJSON('../services/printers/homeZ/'+printerName);
+			console.log("I'm gonna home");
+			
+		}
+		
+		function FinishBtn()
+        {
+		    window.location.href="Home.html";
+		}
         	
         function init()
         {
+           // clickCount = 1; 
              document.getElementById("levelImage").src="images/levelImage_1_a.png"; 
-             document.getElementById("printerProcessText").innerHTML="Place the vat tray in the right place inside the printer & tight the locks";
+             document.getElementById("printerProcessText").innerHTML="Place the vat tray  in the right place inside the printer & tight the locks";
              document.getElementById("printerProcessCautionText1").innerHTML="Do not over tight the tray locks";
              document.getElementById("printerProcessCautionText2").innerHTML="Do not leave the tray unleveled";
-        }	
+
+             
+             $('.levelHomeBtn').hide();
+             $('.finishBtn').hide();
+             	// just grabbing the first printer available, since it's embedded this should be fine :)! Only downside printer would need to be started!
+			$.getJSON('/services/printers/getFirstAvailablePrinter').success(function(data) {
+	   	        configurationObject = data["configuration"];
+	   	    	printerName = configurationObject["name"];
+		     });
+		     
+        }
+        
+        	$(document).ready(function(){
+		        $(".levelHomeBtn").mouseup(function(){
+		    	    $('#levelHomeBtn').attr('src','images/levelHome_btn.png');
+		        });
+		        $(".levelHomeBtn").mousedown(function(){
+		    	    $('#levelHomeBtn').attr('src','images/levelHome_btn.png');
+		        });
+        	});
+        
+        
 	</script>
 
 
@@ -50,19 +141,21 @@
     <body style="background-color: black;" onload="init();" >
         <div class="initScreen">
             <div class="main">
-                <img class="levelBar" src="images/levelBar_1.png">
-                
-                <div class="printerProcessTextDiv">
-                    	<div class="printerProcessText" id="printerProcessText"> </div>
-                    	<div class="printerProcessCautionText1" id="printerProcessCautionText1"> </div>
-                    	<div class="printerProcessCautionText2" id="printerProcessCautionText2"> </div>
-                        <img name="printerProcessCautionIcon1" id="printerProcessCautionIcon1" class="printerProcessCautionIcon1"  src="images/Block_Icon.png">
-                        <img name="printerProcessCautionIcon2" id="printerProcessCautionIcon2" class="printerProcessCautionIcon2"  src="images/Block_Icon.png">
+			
+			    <img name="levelBar" class="levelBar" id="levelBar" src="images/levelBar_1.png">
+			    <div class="printerProcessTextDiv">
+                    <div class="printerProcessText" id="printerProcessText"> </div>
+                    <div class="printerProcessCautionText1" id="printerProcessCautionText1"> </div>
+                    <div class="printerProcessCautionText2" id="printerProcessCautionText2"> </div>
+                    <img name="printerProcessCautionIcon1" id="printerProcessCautionIcon1" class="printerProcessCautionIcon1"  src="images/Block_Icon.png">
+                    <img name="printerProcessCautionIcon2" id="printerProcessCautionIcon2" class="printerProcessCautionIcon2"  src="images/Block_Icon.png">
                 </div>
-               
-				<img name="levelImage" id="levelImage" class="levelImage" >
-                <img name="nextBtn" class="nextBtn" id="nextBtn" src="images/nextBtn.png" onclick="nextEvent()">
-				<div class="printPercentage" id="printPercentage"> </div>/
+                <img name="levelImage2" id="levelImage2" class="levelImage2"  src="">
+			    <img name="levelImage" id="levelImage" class="levelImage" >
+                <img name="nextBtn" class="nextBtn" id="nextBtn" src="images/nextBtn.png" onclick="nextEvent();">
+                <img name="levelHomeBtn" class="levelHomeBtn" src="images/levelHome_btn.png" onclick="levelHome();">
+                <img name="finishBtn" class="finishBtn" src="images/finish_btn.png" onclick="FinishBtn();">
+			  <!--  <div class="printPercentage" id="printPercentage"> </div>  -->
             </div>
         </div>
 
