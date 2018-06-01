@@ -84,6 +84,15 @@
   				"NumberofBottomLayers": 4,
   				"ResinPriceL": 45
   			}
+			 {
+          			"PercentageOfPrintMaterialConsideredEmpty": 10,
+  				"Name": "J-Castable 100 Microns",
+  				"SliceHeight": 0.10,
+  				"LayerTime": 9000,
+  				"FirstLayerTime": 40000,
+  				"NumberofBottomLayers": 4,
+  				"ResinPriceL": 45
+        }	      
 			]
   		},
   		"MachineConfigurationName": "Xtreme-J",
