@@ -1,8 +1,8 @@
     {
   	"configuration": {
-  		"name": "Photocentric Precision",
+  		"name": "Xtreme-J",
   		"machineConfig": {
-  			"name": "Photocentric Precision",
+  			"name": "Xtreme-J",
   			"FileVersion": 0,
   			"PlatformXSize": 68.04,
   			"PlatformYSize": 120.96,
@@ -13,7 +13,7 @@
   			"XRenderSize": 1440,
   			"YRenderSize": 2560,
   			"MotorsDriverConfig": {
-  				"DriverType": "Photocentric",
+  				"DriverType": "Xtrememicrotech",
   				"ComPortSettings": {
   					"PortName": "Autodetect 3d printer firmware",
   					"Speed": 115200,
@@ -27,7 +27,7 @@
   				"DLP_X_Res": 1440,
   				"DLP_Y_Res": 2560,
   				"MonitorID": "DISPLAY1",
-  				"OSMonitorID": "Photocentric Custom Display",
+  				"OSMonitorID": "Custom Display",
   				"DisplayCommEnabled": false,
   				"ComPortSettings": {
   					"Handshake": "None"
@@ -41,16 +41,16 @@
   			"PauseOnPrinterResponseRegEx": ".*door.*open.*"
   		},
   		"slicingProfile": {
-  			"gCodeHeader": "G91;\nM17;\nG1 Z10 F50;\nG1 Z-10 F50;",
-  			"gCodeFooter": "M18",
-  			"gCodePreslice": null,
-  			"gCodeLift": "G1 Z1.0 F50.0;\n;<delay> 3000;\nG1 Z-${(1.0 - LayerThickness)} F50;\nM17;\n;<delay> 7000;",
+  			"gCodeHeader": "G91;\nM17;\nG28;",
+  			"gCodeFooter": "M107;\nM18;",
+  			"gCodePreslice": "M106 S255;",
+  			"gCodeLift": "M107;\nG1 Z${ZLiftDist} F${ZLiftRate};\nG1 Z-${(ZLiftDist - LayerThickness)} F180;\nG4 S2;",
   			"gCodeShutter": null,
-  			"name": "Photocentric Precision Slicing",
+  			"name": "Xtreme-J Slicing",
   			"zliftDistanceGCode": null,
   			"zliftSpeedGCode": null,
   			"selectedInkConfigIndex": 0,
-  			"DotsPermmX": 21.1640212,
+  			"DotsPermmX": 21.1640212, 
   			"DotsPermmY": 21.1640212,
   			"XResolution": 1440,
   			"YResolution": 2560,
@@ -69,15 +69,15 @@
   			"LiftRetractRate": 0,
   			"FlipX": false,
   			"FlipY": true,
-  			"ZLiftDistanceCalculator": "var value = 1.0;",
+  			"ZLiftDistanceCalculator": "var value = 5;",
   			"ZLiftSpeedCalculator": "var value = 50.0;",
   			"ExposureTimeCalculator": "var value = $FirstLayerTime;\nif ($CURSLICE > $NumFirstLayers) {\n\tvalue = $LayerTime\n}\nvalue",
-  			"SelectedInk": "v.II Castable 50 Microns",
+  			"SelectedInk": "J-Castable 50 Microns",
   			"MinTestExposure": 0,
   			"TestExposureStep": 0,
   			"InkConfig": [{
   				"PercentageOfPrintMaterialConsideredEmpty": 10,
-  				"Name": "v.II Castable 50 Microns",
+  				"Name": "J-Castable 50 Microns",
   				"SliceHeight": 0.05,
   				"LayerTime": 9000,
   				"FirstLayerTime": 40000,
@@ -86,14 +86,14 @@
   			}
 			]
   		},
-  		"MachineConfigurationName": "Photocentric Precision",
-  		"SlicingProfileName": "Photocentric Precision Slicing",
+  		"MachineConfigurationName": "Xtreme-J",
+  		"SlicingProfileName": "Xtreme-J Slicing",
   		"AutoStart": true,
   		"Calibrated": false
   	},
   	"started": true,
   	"shutterOpen": false,
-  	"displayDeviceID": "Photocentric Custom Display",
+  	"displayDeviceID": "Custom Display",
   	"currentSlicePauseTime": 0,
   	"status": "Ready",
   	"printPaused": false,
